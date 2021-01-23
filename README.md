@@ -1,1 +1,0 @@
-# mohankumarpaluru.github.io
