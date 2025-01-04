@@ -1,8 +1,7 @@
 # Portfolio
 
 <div style="text-align:center;">
-    <img src="https://github.com/mohankumarpaluru/mohankumarpaluru.github.io
-/raw/refs/heads/master/assets/images/logo.png" alt="Project Logo" height="200">
+    <img src="https://github.com/mohankumarpaluru/mohankumarpaluru.github.io/raw/refs/heads/master/assets/images/logo.png" alt="Project Logo" height="200">
 </div>
 
 A simple, customizable portfolio website built using HTML, CSS, and JavaScript.
@@ -18,8 +17,8 @@ A simple, customizable portfolio website built using HTML, CSS, and JavaScript.
 
 ## Screenshots
 
-![Desktop](https://github.com/mohankumarpaluru/portfolio/blob/master/assets/images/screenshot_1.jpg)
-![Mobile](https://github.com/mohankumarpaluru/portfolio/blob/master/assets/images/screenshot_2.jpg)
+![Desktop](https://raw.githubusercontent.com/mohankumarpaluru/mohankumarpaluru.github.io/9885f20859cd330713367980db24e251f7a290e8/assets/images/screenshot_1.jpg)
+![Mobile](https://raw.githubusercontent.com/mohankumarpaluru/mohankumarpaluru.github.io/9885f20859cd330713367980db24e251f7a290e8/assets/images/screenshot_2.jpg)
 
 ## Live Demo
 
@@ -61,4 +60,4 @@ Contributions are welcome! For major changes, please open an issue first to disc
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/mohankumarpaluru/portfolio/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/mohankumarpaluru/mohankumarpaluru.github.io/blob/9885f20859cd330713367980db24e251f7a290e8/LICENSE) file for details.
