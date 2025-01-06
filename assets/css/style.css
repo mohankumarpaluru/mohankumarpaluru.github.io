@@ -755,29 +755,25 @@ main {
 }
 
 
-/**
+ /**
  * #techstack
  */
 
-.techstack { margin-bottom: 15px; }
+ .techstack-wrapper {
+  /* position: relative; */
+  overflow: hidden;
+  width: 100%;
+}
 
 .techstack-list {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 5px;
-  margin: 0 -15px;
-  padding: 25px;
-  padding-bottom: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
+  animation: scroll 20s linear infinite; /* Smooth continuous scroll */
 }
 
 .techstack-item {
-  min-width: 20%;
+  flex-shrink: 0;
+  width: auto;
   scroll-snap-align: start;
 }
 
@@ -790,8 +786,19 @@ main {
   transition: var(--transition-1);
 }
 
-.techstack-item img:hover { filter: grayscale(0); }
+.techstack-item img:hover {
+  filter: grayscale(0);
+}
 
+/* Keyframes for horizontal scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 
 
