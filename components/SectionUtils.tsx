@@ -1,0 +1,99 @@
+
+import React from 'react';
+import { useScrollStore } from '../store/useScrollStore';
+import { STATE_COUNT } from '../types';
+
+// Logic to determine opacity based on continuous scroll progress
+export function useSectionOpacity(index: number, visibleRange = 0.35) {
+  const scrollProgress = useScrollStore(s => s.scrollProgress);
+  const currentFloatIndex = scrollProgress * (STATE_COUNT - 1);
+  const distance = Math.abs(currentFloatIndex - index);
+  let opacity = 0;
+  if (distance < visibleRange) {
+    const normalizedDist = distance / visibleRange;
+    opacity = 1 - Math.pow(normalizedDist, 2);
+  }
+  return Math.max(0, opacity);
+}
+
+// Internal scroll handler wrapper with flex-grow to fill available space
+export const ScrollableContent: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => {
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    const { scrollTop, scrollHeight, clientHeight } = el;
+    const deltaY = e.deltaY;
+    const isScrollUp = deltaY < 0;
+    const isScrollDown = deltaY > 0;
+    const isAtTop = scrollTop <= 0;
+    const isAtBottom = Math.abs(scrollHeight - clientHeight - scrollTop) <= 1;
+
+    if (isScrollUp && isAtTop) return;
+    if (isScrollDown && isAtBottom) return;
+
+    e.stopPropagation();
+  };
+
+  return (
+    <div
+      className={`overflow-y-auto custom-scrollbar flex-1 min-h-0 ${className || ''}`}
+      onWheel={handleWheel}
+    >
+      {children}
+    </div>
+  );
+}
+
+export const Section: React.FC<{ index: number; children: React.ReactNode; className?: string }> = ({ index, children, className }) => {
+  const opacity = useSectionOpacity(index, 0.45);
+  if (opacity < 0.01) return null;
+
+  return (
+    <div
+      // Fixed Safe-Area padding: pt-24 (mobile) / pt-32 (desktop)
+      className={`absolute inset-0 flex items-center justify-center pointer-events-none p-4 md:p-12 pt-24 md:pt-32 transition-opacity duration-75 ${className || ''}`}
+      style={{ opacity }}
+    >
+      {/* 
+         Container constrained to viewport height minus padding. 
+         flex-col ensures children (Header + ScrollableContent) stack correctly without overflow.
+      */}
+      <div className="max-w-6xl w-full h-full max-h-[85vh] pointer-events-auto dark:text-slate-100 text-slate-800 flex flex-col transition-colors duration-500 drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+// Helper for Clarity Headers
+export const ClarityHeader: React.FC<{ id: string; hint: string }> = ({ id, hint }) => (
+  <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-2 md:mb-4 opacity-80 shrink-0">
+    <h2 className="dark:text-sky-400 text-cyan-600 text-xs md:text-sm font-mono tracking-widest">{id}</h2>
+    <span className="hidden md:inline dark:text-slate-600 text-slate-400 font-mono text-sm">//</span>
+    <span className="dark:text-slate-500 text-slate-500 font-mono text-[10px] md:text-xs uppercase tracking-wider">{hint}</span>
+  </div>
+);
+
+// Shared Gradient Strings - Adjusted for visibility in both modes
+export const gradientText = "bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent";
+export const hoverGradientText = "group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:via-purple-600 group-hover:to-pink-600 dark:group-hover:from-blue-400 dark:group-hover:via-purple-400 dark:group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent";
+export const nameGradient = "bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 dark:from-indigo-200 dark:via-indigo-300 dark:to-purple-300 bg-clip-text text-transparent";
+
+// Scrim for readability
+// Dark mode: dark scrim. Light mode: subtle white fade or none needed if background is solid.
+// We keep a very subtle gradient in light mode for depth.
+export const cardScrim = "absolute inset-0 bg-gradient-to-b from-[#f0f4f8]/50 to-[#f0f4f8]/80 dark:from-[#0a0a14]/80 dark:to-[#0a0a14]/95 z-0 pointer-events-none transition-colors duration-500";
+
+// Helper to render title with data-driven highlight
+export const RenderTitle: React.FC<{ title: string; highlight?: string; className?: string }> = ({ title, highlight, className }) => {
+  if (!highlight || !title.includes(highlight)) {
+    return <h3 className={className}>{title}</h3>;
+  }
+  const parts = title.split(highlight);
+  return (
+    <h3 className={className}>
+      {parts[0]}
+      <span className={gradientText}>{highlight}</span>
+      {parts[1]}
+    </h3>
+  );
+};
