@@ -55,7 +55,7 @@ export const GlowCard: React.FC<GlowCardProps> = ({
         relative overflow-hidden rounded-xl transition-all duration-300
         border 
         dark:border-white/10 dark:bg-black/40 dark:hover:border-white/20
-        border-slate-200 bg-white/60 hover:border-slate-300 hover:bg-white/80 hover:shadow-sm
+        border-[#0c101c]/[0.05] bg-gradient-to-b from-white/96 to-white/92 hover:border-slate-300 hover:bg-white/80 shadow-[0_10px_24px_rgba(8,12,24,0.06),0_2px_6px_rgba(8,12,24,0.04)]
         backdrop-blur-sm
         ${className}
       `}
