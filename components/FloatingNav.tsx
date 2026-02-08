@@ -36,7 +36,7 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({ onNavigate }) => {
 
   return (
     <div className="fixed top-6 left-1/2 -translate-x-1/2 z-30 w-full max-w-4xl px-4 pointer-events-none">
-      <div className="relative bg-white/70 dark:bg-black/60 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-full pl-2 pr-2 py-2 pointer-events-auto shadow-2xl flex items-center transition-colors duration-500">
+      <div className="relative bg-white/70 dark:bg-black/60 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-full pl-2 pr-2 py-2 pointer-events-auto shadow-[0_10px_26px_rgba(15,23,42,0.12)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.35)] flex items-center transition-colors duration-500">
 
         {/* Navigation Items - Scrollable */}
         <div className="flex-1 flex items-center gap-2 overflow-x-auto no-scrollbar mask-gradient px-2 md:px-4">

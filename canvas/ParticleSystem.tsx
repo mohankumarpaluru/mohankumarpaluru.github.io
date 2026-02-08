@@ -34,8 +34,8 @@ export const ParticleSystem: React.FC = () => {
       bg: new THREE.Color(0x050505)
     },
     light: {
-      blue: new THREE.Color(0x2563eb), // Blue 600 (Darker)
-      hero: new THREE.Color(0x4f46e5), // Indigo 600
+      blue: new THREE.Color(0x6b56e6), // Warmer Purple as requested
+      hero: new THREE.Color(0x6b56e6), // Matching for coherence
       signal: new THREE.Color(0x0f172a), // Slate 900
       bg: new THREE.Color(0xf0f4f8)
     }
@@ -91,7 +91,8 @@ export const ParticleSystem: React.FC = () => {
       default: op = 0.5;
     }
     // In light mode, reduce opacity slightly to be more watermark-like
-    if (theme === 'light') return op * 0.8;
+    // User Update: Light mode particles need to be slightly MORE visible now that we have warmer color
+    if (theme === 'light') return op * 0.9;
     return op;
   };
 
@@ -144,7 +145,7 @@ export const ParticleSystem: React.FC = () => {
     // --- MOUSE & SCALE ---
     hoverRef.current.x += (mousePosition.x * 5 - hoverRef.current.x) * 0.1;
     hoverRef.current.y += (mousePosition.y * 5 - hoverRef.current.y) * 0.1;
-    const responsiveScale = viewport.width < 7 ? 0.65 : 1.0;
+    const responsiveScale = viewport.width < 7 ? 0.72 : (viewport.width < 10 ? 0.88 : 1.0);
 
     // --- PARTICLE LOOP ---
     let swarmIntensity = 0;
@@ -229,10 +230,10 @@ export const ParticleSystem: React.FC = () => {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={activeParticleCount < 2000 ? 0.055 : 0.04} // Slightly larger on mobile for visibility
+        size={activeParticleCount < 2000 ? 0.055 : (theme === 'light' ? 0.05 : 0.04)}
         color="#3b82f6"
         transparent
-        opacity={0.8}
+        opacity={theme === 'light' ? 0.9 : 0.8}
         sizeAttenuation={true}
         blending={theme === 'dark' ? THREE.AdditiveBlending : THREE.NormalBlending}
         depthWrite={false}
