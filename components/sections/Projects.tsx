@@ -19,7 +19,7 @@ export const Projects: React.FC = () => {
                 </div>
 
                 <ScrollableContent className="pb-20">
-                    <div className="bg-gradient-to-b from-[#f8faff]/92 to-[#f4f6fc]/88 dark:from-black/60 dark:to-black/60 backdrop-blur-md rounded-xl p-4 md:p-6 border border-[#0c101c]/[0.04] dark:border-white/10 transition-colors duration-500">
+                    <div className="bg-white/50 dark:bg-black/60 backdrop-blur-md rounded-xl p-4 md:p-6 border border-slate-200 dark:border-white/10 transition-colors duration-500">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                             {portfolioData.projects.map((proj, i) => (
                                 <GlowCard
