@@ -1,63 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mohan Kumar Paluru | Data Engineer</title>
-    <meta name="description" content="Portfolio of Mohan Kumar Paluru - Python Data Engineer" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['JetBrains Mono', 'monospace'],
-            },
-            colors: {
-              'accent': '#38bdf8', // Sky 400
-              'accent-secondary': '#818cf8', // Indigo 400
-              'bg-dark': '#050505', // Deep black/blue
-              'bg-light': '#f0f4f8', // Cool Grey
-            },
-            animation: {
-              'spin-slow': 'spin 8s linear infinite',
-            }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohan Kumar Paluru | Data Engineer & Python Specialist</title>
+  <meta name="description"
+    content="Portfolio of Mohan Kumar Paluru - Python & AWS Data Engineer specializing in robust data pipelines, backend development, and automation." />
+
+  <!-- SEO & Meta Tags -->
+  <meta name="title" content="Mohan Kumar Paluru | Data Engineer & Python Specialist">
+  <meta name="author" content="Mohan Kumar Paluru">
+  <meta name="keywords"
+    content="Mohan Kumar Paluru, Data Engineer, Python, AWS, Snowflake, Airflow, dbt, React, Portfolio, Data Engineering, Backend Developer">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#050505">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mohan.is-a.dev/">
+  <meta property="og:title" content="Mohan Kumar Paluru | Data Engineer & Python Specialist">
+  <meta property="og:description"
+    content="Portfolio of Mohan Kumar Paluru - Python & AWS Data Engineer specializing in robust data pipelines, backend development, and automation.">
+  <meta property="og:image" content="https://mohan.is-a.dev/assets/logo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://mohan.is-a.dev/">
+  <meta property="twitter:title" content="Mohan Kumar Paluru | Data Engineer & Python Specialist">
+  <meta property="twitter:description"
+    content="Portfolio of Mohan Kumar Paluru - Python & AWS Data Engineer specializing in robust data pipelines, backend development, and automation.">
+  <meta property="twitter:image" content="https://mohan.is-a.dev/assets/logo.png">
+  <meta name="twitter:creator" content="@trixter127">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/assets/logo.ico">
+  <link rel="shortcut icon" href="/assets/logo.ico">
+  <link rel="apple-touch-icon" href="/assets/logo.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohan Kumar Paluru",
+      "url": "https://mohan.is-a.dev",
+      "jobTitle": "Data Engineer",
+      "sameAs": [
+        "https://linkedin.com/in/mohankumarpaluru",
+        "https://github.com/mohankumarpaluru",
+        "https://x.com/trixter127",
+        "https://instagram.com/mohankumarpaluru",
+        "https://telegram.dog/trixter127"
+      ],
+      "image": "https://mohan.is-a.dev/assets/mohan.png",
+      "description": "Python & AWS Data Engineer specializing in robust data pipelines, backend development, and automation."
+    }
+    </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            'accent': '#38bdf8', // Sky 400
+            'accent-secondary': '#818cf8', // Indigo 400
+            'bg-dark': '#050505', // Deep black/blue
+            'bg-light': '#f0f4f8', // Cool Grey
+          },
+          animation: {
+            'spin-slow': 'spin 8s linear infinite',
           }
         }
       }
-    </script>
-    <style>
-      body { margin: 0; background-color: #050505; color: #e2e8f0; overflow: auto; transition: background-color 0.5s ease; }
-      /* Ensure root has height to prevent collapse before JS hydration */
-      #root { min-height: 100vh; }
-      
-      /* Hide scrollbar but allow scroll */
-      .no-scrollbar::-webkit-scrollbar { display: none; }
-      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      
-      /* Lenis recommended CSS */
-      html.lenis, html.lenis body {
-        height: auto;
-      }
-      .lenis.lenis-smooth {
-        scroll-behavior: auto !important;
-      }
-      .lenis.lenis-smooth [data-lenis-prevent] {
-        overscroll-behavior: contain;
-      }
-      .lenis.lenis-stopped {
-        overflow: hidden;
-      }
-      .lenis.lenis-scrolling iframe {
-        pointer-events: none;
-      }
-    </style>
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #050505;
+      color: #e2e8f0;
+      overflow: auto;
+      transition: background-color 0.5s ease;
+    }
+
+    /* Ensure root has height to prevent collapse before JS hydration */
+    #root {
+      min-height: 100vh;
+    }
+
+    /* Hide scrollbar but allow scroll */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Lenis recommended CSS */
+    html.lenis,
+    html.lenis body {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+  </style>
 
   <script type="importmap">
 {
@@ -77,7 +150,9 @@
   <script type="module" crossorigin src="/assets/index-CdSj0hUF.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-pQZ7QQkV.css">
 </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<body>
+  <div id="root"></div>
+</body>
+
 </html>
