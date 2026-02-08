@@ -1,7 +1,7 @@
 
 import React, { useRef, useState } from 'react';
 
-interface GlowCardProps {
+interface GlowCardProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
@@ -11,14 +11,15 @@ interface GlowCardProps {
   rel?: string;
 }
 
-export const GlowCard: React.FC<GlowCardProps> = ({ 
-  children, 
-  className = '', 
+export const GlowCard: React.FC<GlowCardProps> = ({
+  children,
+  className = '',
   onClick,
   as = 'div',
   href,
   target,
-  rel
+  rel,
+  ...rest
 }) => {
   const cardRef = useRef<HTMLElement>(null);
   const [coords, setCoords] = useState({ x: 0, y: 0 });
@@ -49,6 +50,7 @@ export const GlowCard: React.FC<GlowCardProps> = ({
       onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      {...rest}
       className={`
         relative overflow-hidden rounded-xl transition-all duration-300
         border 
@@ -59,11 +61,11 @@ export const GlowCard: React.FC<GlowCardProps> = ({
       `}
     >
       {/* Spotlight Gradient - Adapted for Dark/Light */}
-      <div 
+      <div
         className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300"
         style={{ opacity }}
       >
-        <div 
+        <div
           className="absolute inset-0 dark:bg-gradient-to-r dark:from-blue-500/20 dark:via-purple-500/20 dark:to-pink-500/20 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 blur-xl"
           style={{
             maskImage: `radial-gradient(350px circle at ${coords.x}px ${coords.y}px, black, transparent)`,

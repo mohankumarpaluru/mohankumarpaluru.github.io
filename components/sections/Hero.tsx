@@ -1,8 +1,10 @@
 
+
 import React from 'react';
 import { PortfolioState } from '../../types';
 import { portfolioData } from '../../data/portfolioData';
 import { Section, ClarityHeader, nameGradient, gradientText } from '../SectionUtils';
+import { useThemeStore } from '../../store/useThemeStore';
 
 export const Hero: React.FC = () => {
   const nameParts = portfolioData.bio.name.split(' ');
@@ -10,23 +12,53 @@ export const Hero: React.FC = () => {
   const firstName = nameParts.join(' ');
   const [taglineRole, taglineMantra] = portfolioData.bio.title.split('\n');
   const sectionData = portfolioData.sections.hero;
+  const theme = useThemeStore((state) => state.theme);
 
   return (
     <Section index={PortfolioState.HERO}>
-      {/* Particle Fade Mask - Refined for Light Mode */}
-      <div className="hidden md:block absolute inset-0 -left-[20%] w-[140%] z-[-1] pointer-events-none 
-             opacity-0 dark:opacity-0 lg:opacity-100 transition-opacity duration-1000
-             bg-[linear-gradient(90deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.55)_35%,rgba(255,255,255,0.8)_100%)] mix-blend-multiply filter blur-[0.5px]
-             dark:bg-[radial-gradient(circle_at_30%_50%,rgba(5,5,5,0.5)_0%,rgba(5,5,5,0)_40%)] dark:mix-blend-normal dark:filter-none">
-      </div>
+      {/* Hero Headline Scrim - Light Mode Only - Atmospheric Fog */}
+      {theme === 'light' && (
+        <>
+          {/* Desktop Scrim */}
+          <div
+            className="hero-headline-scrim pointer-events-none hidden md:block"
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              top: '18%',
+              left: '-6%',
+              width: '78%',
+              height: '420px',
+              zIndex: 12,
+              borderRadius: '50%',
+              filter: 'blur(18px)',
+              background: 'radial-gradient(ellipse at 28% 40%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.72) 22%, rgba(255,255,255,0.38) 44%, rgba(255,255,255,0.12) 66%, rgba(255,255,255,0.00) 86%)',
+              opacity: 0.92,
+            }}
+          />
 
-      {/* Mobile Scrim */}
-      <div className="md:hidden absolute inset-0 z-[-1] pointer-events-none opacity-90 dark:opacity-60 transition-opacity duration-1000
-             bg-[radial-gradient(circle_at_center,rgba(240,244,248,0.9)_0%,rgba(240,244,248,0)_70%)]
-             dark:bg-[radial-gradient(circle_at_center,rgba(5,5,5,0.5)_0%,rgba(5,5,5,0)_70%)]">
-      </div>
+          {/* Mobile Scrim */}
+          <div
+            className="hero-headline-scrim pointer-events-none md:hidden"
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              top: '22%',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '110%',
+              height: '360px',
+              zIndex: 12,
+              borderRadius: '50%',
+              filter: 'blur(16px)',
+              background: 'radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.62) 28%, rgba(255,255,255,0.28) 52%, rgba(255,255,255,0.08) 72%, rgba(255,255,255,0.00) 90%)',
+              opacity: 0.9,
+            }}
+          />
+        </>
+      )}
 
-      <div className="text-center md:text-left py-4 md:py-10 h-full flex flex-col justify-center relative z-10">
+      <div className="text-center md:text-left py-4 md:py-10 h-full flex flex-col justify-center relative z-30 pointer-events-auto">
         <ClarityHeader id={sectionData.id} hint={sectionData.clarityHint} />
 
         <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-4 md:mb-6 leading-tight max-w-[20ch] md:max-w-none mx-auto md:mx-0 text-balance dark:shadow-none shadow-[0_0_0.6px_rgba(15,23,42,0.35),0_2px_10px_rgba(255,255,255,0.65)]">
