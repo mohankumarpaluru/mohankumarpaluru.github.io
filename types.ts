@@ -30,6 +30,7 @@ export interface Bio {
 export interface TechItem {
   name: string;
   logo: string;
+  orbit?: "core" | "logic" | "infra"; // Optional: only for currentTechStack
 }
 
 export interface PersonalEndeavor {
@@ -48,6 +49,8 @@ export interface Project {
   description: string;
   link: string;
   tags: string[];
+  image?: string; // Optional project thumbnail/screenshot
+  featured?: boolean; // Featured projects shown larger in Bento Grid
 }
 
 export interface BlogPost {
@@ -56,6 +59,8 @@ export interface BlogPost {
   date: string;
   url: string;
   excerpt: string;
+  image?: string; // Optional blog post image path
+  thumbnail?: string; // Optional blog post thumbnail image
 }
 
 export interface Experience {
@@ -93,7 +98,8 @@ export interface SectionInfo {
 export interface PortfolioData {
   bio: Bio;
   resume: Resume;
-  techStack: TechItem[];
+  currentTechStack: TechItem[]; // Current active stack for orbital (12 items)
+  completeTechStack: TechItem[]; // Complete tech portfolio for ticker (all items)
   personalEndeavors: PersonalEndeavor[];
   skills: Skill[];
   projects: Project[];

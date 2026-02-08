@@ -1,0 +1,37 @@
+/* Gradient mask for scrollable navigation */
+.mask-gradient {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+}
+
+/* Mobile: stronger fade to indicate scrollability */
+@media (max-width: 768px) {
+  .mask-gradient {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+}

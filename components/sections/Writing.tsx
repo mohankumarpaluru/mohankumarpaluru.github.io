@@ -3,39 +3,112 @@ import React from 'react';
 import { PortfolioState } from '../../types';
 import { portfolioData } from '../../data/portfolioData';
 import { Section, ScrollableContent, ClarityHeader, RenderTitle, hoverGradientText, cardScrim } from '../SectionUtils';
+import { ExternalLink } from 'lucide-react';
 
 export const Writing: React.FC = () => {
-  const sectionData = portfolioData.sections.writing;
+    const sectionData = portfolioData.sections.writing;
 
-  return (
-    <Section index={PortfolioState.WRITING}>
-        <div className="bg-white/60 dark:bg-black/60 backdrop-blur-md p-5 md:p-8 rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl w-full h-full flex flex-col overflow-hidden transition-colors duration-500">
-        <div className="mb-4 md:mb-8 border-b border-slate-200 dark:border-white/10 pb-4 flex flex-col md:flex-row md:items-baseline justify-between shrink-0">
-            <div>
-                <ClarityHeader id={sectionData.id} hint={sectionData.clarityHint} />
-                <RenderTitle title={sectionData.title} highlight={sectionData.highlight} className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white" />
-            </div>
-            <div className="text-xs font-mono text-slate-500 mt-2 md:mt-0">
-                {sectionData.tagline}
-            </div>
-        </div>
-        
-        <ScrollableContent className="space-y-4 md:space-y-4 pr-2">
-            {portfolioData.blogPosts.map((post, i) => (
-                <a href={post.url} target="_blank" rel="noreferrer" key={i} className="block group relative rounded-lg overflow-hidden border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 transition-colors bg-white/40 dark:bg-transparent">
-                <div className={cardScrim}></div>
-                <div className="relative z-10 p-4 flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4">
-                    <span className="font-mono text-[10px] md:text-xs text-slate-500 w-24 pt-1">{post.date}</span>
-                    <div className="flex-1">
-                        <h3 className={`text-base md:text-2xl font-medium text-slate-800 dark:text-slate-200 ${hoverGradientText} transition-colors`}>{post.title}</h3>
-                        <p className="text-slate-600 dark:text-slate-200 opacity-90 text-xs md:text-base mt-1 md:mt-2 leading-relaxed max-w-2xl font-normal">{post.excerpt}</p>
+    // Show top 6 posts (3x2 grid)
+    const topPosts = portfolioData.blogPosts.slice(0, 6);
+
+    return (
+        <Section index={PortfolioState.WRITING}>
+            <div className="bg-slate-50 dark:bg-black/70 backdrop-blur-md p-4 md:p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl w-full h-full flex flex-col overflow-hidden transition-colors duration-500">
+                <div className="mb-4 md:mb-6 border-b border-slate-200 dark:border-white/10 pb-3 flex flex-col md:flex-row md:items-baseline justify-between shrink-0">
+                    <div>
+                        <ClarityHeader id={sectionData.id} hint={sectionData.clarityHint} />
+                        <RenderTitle title={sectionData.title} highlight={sectionData.highlight} className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white" />
                     </div>
-                    <span className="text-[10px] md:text-xs bg-slate-100 dark:bg-white/5 px-2 py-0.5 md:px-3 md:py-1 rounded-full text-indigo-600 dark:text-indigo-300 border border-slate-200 dark:border-white/10 self-start md:self-center mt-2 md:mt-0 group-hover:border-purple-500/30 group-hover:text-purple-500 dark:group-hover:text-purple-200 transition-colors">{post.category}</span>
+                    <div className="text-xs font-mono text-slate-500 mt-2 md:mt-0">
+                        {sectionData.tagline}
+                    </div>
                 </div>
-                </a>
-            ))}
-        </ScrollableContent>
-        </div>
-    </Section>
-  );
+
+                <ScrollableContent className="pr-2">
+                    {/* 3x2 Grid Layout with Smooth Expansion */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                        {topPosts.map((post, i) => {
+                            // Determine column position for expansion direction
+                            const columnIndex = i % 3;
+                            const isRightColumn = columnIndex === 2;
+
+                            return (
+                                <a
+                                    href={post.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    key={i}
+                                    className={`
+                                        group relative rounded-lg overflow-hidden border border-slate-200 dark:border-white/10
+                                        hover:border-purple-500/50 dark:hover:border-purple-400/50
+                                        bg-white/60 dark:bg-transparent cursor-pointer
+                                        hover:z-50 hover:shadow-2xl dark:hover:shadow-[0_20px_40px_rgba(120,100,255,0.25)]
+                                        md:hover:w-[calc(200%+1rem)]
+                                        ${isRightColumn ? 'md:origin-right' : 'md:origin-left'}
+                                    `}
+                                    style={{
+                                        transition: 'width 350ms ease-in-out, border-color 200ms ease-in-out, box-shadow 200ms ease-in-out'
+                                    }}
+                                >
+                                    <div className={cardScrim}></div>
+
+                                    {/* Flex container for horizontal layout on expansion */}
+                                    <div className="relative z-10 flex flex-col md:group-hover:flex-row h-full">
+
+                                        {/* Left Section: Original Card Content (Stays Same Size) */}
+                                        <div className={`flex-shrink-0 ${isRightColumn ? 'md:group-hover:order-2' : 'md:group-hover:order-1'}`}>
+                                            {/* Image - Full width by default, fixed width on hover */}
+                                            <div
+                                                className="w-full md:group-hover:w-[280px] h-32 md:h-40 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 overflow-hidden"
+                                                style={{
+                                                    transition: 'width 350ms ease-in-out'
+                                                }}
+                                            >
+                                                {post.image ? (
+                                                    <img
+                                                        src={post.image}
+                                                        alt={post.title}
+                                                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                                    />
+                                                ) : (
+                                                    <div className="w-full h-full flex items-center justify-center">
+                                                        <div className="text-4xl md:text-5xl opacity-20 group-hover:opacity-30 transition-opacity">📝</div>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Title & Meta */}
+                                            <div className="p-3 md:p-4">
+                                                {/* Date & Category */}
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <span className="font-mono text-[10px] text-slate-500 dark:text-slate-400">{post.date}</span>
+                                                    <span className="text-[10px] bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded-full text-indigo-600 dark:text-indigo-300 border border-slate-200 dark:border-white/10 group-hover:border-purple-500/30 group-hover:text-purple-500 dark:group-hover:text-purple-300 transition-colors">{post.category}</span>
+                                                </div>
+
+                                                {/* Title */}
+                                                <h3 className={`text-sm md:text-base font-bold text-slate-800 dark:text-slate-200 ${hoverGradientText} transition-colors line-clamp-2`}>{post.title}</h3>
+                                            </div>
+                                        </div>
+
+                                        {/* Right Section: Excerpt Area (Hidden → Revealed on Expansion) */}
+                                        <div className={`
+                                            hidden md:group-hover:flex flex-col justify-center flex-1 p-4 
+                                            border-l border-slate-200 dark:border-white/10
+                                            ${isRightColumn ? 'md:group-hover:order-1 border-l-0 border-r' : 'md:group-hover:order-2'}
+                                        `}>
+                                            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">{post.excerpt}</p>
+                                            <div className="flex items-center gap-1.5 text-purple-500 dark:text-purple-400 text-xs font-medium">
+                                                <span>Read article</span>
+                                                <ExternalLink size={12} className="transition-transform" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            );
+                        })}
+                    </div>
+                </ScrollableContent>
+            </div>
+        </Section>
+    );
 };

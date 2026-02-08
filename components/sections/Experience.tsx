@@ -30,7 +30,7 @@ export const Experience: React.FC = () => {
                 dark:bg-[radial-gradient(ellipse_at_center,rgba(6,8,12,0.94)_0%,rgba(6,8,12,0)_70%)]">
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 bg-white dark:bg-black/70 backdrop-blur-md p-4 md:p-8 rounded-2xl border border-slate-200 dark:border-white/5 shadow-2xl h-full overflow-hidden transition-colors duration-500">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 bg-slate-50 dark:bg-black/70 backdrop-blur-md p-4 md:p-8 rounded-2xl border border-slate-200 dark:border-white/5 shadow-2xl h-full overflow-hidden transition-colors duration-500">
                     {/* Left Column: Header & Permanent Certifications */}
                     <div className="flex flex-col shrink-0 md:shrink min-h-0 overflow-y-auto md:overflow-visible no-scrollbar">
                         <div className="mb-6 md:mb-8">
@@ -64,8 +64,8 @@ export const Experience: React.FC = () => {
 
                         {/* Tab Switcher */}
                         <div className="flex space-x-1 bg-slate-100 dark:bg-black/40 p-1 rounded-lg border border-slate-200 dark:border-white/10 w-fit mb-4 shrink-0 self-start md:self-auto transition-colors">
-                            <button onClick={() => setActiveTab('experience')} className={`px-4 py-1.5 text-xs font-mono rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 ${activeTab === 'experience' ? 'bg-white dark:bg-white/10 text-cyan-600 dark:text-cyan-400 shadow-sm font-bold' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-white/50 dark:hover:bg-white/5'}`}>EXPERIENCE</button>
-                            <button onClick={() => setActiveTab('education')} className={`px-4 py-1.5 text-xs font-mono rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 ${activeTab === 'education' ? 'bg-white dark:bg-white/10 text-cyan-600 dark:text-cyan-400 shadow-sm font-bold' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-white/50 dark:hover:bg-white/5'}`}>EDUCATION</button>
+                            <button onClick={() => setActiveTab('experience')} className={`px-4 py-1.5 text-xs font-mono rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 ${activeTab === 'experience' ? 'bg-white/80  dark:bg-white/10 text-cyan-600 dark:text-cyan-400 shadow-sm font-bold' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-white/50 dark:hover:bg-white/5'}`}>EXPERIENCE</button>
+                            <button onClick={() => setActiveTab('education')} className={`px-4 py-1.5 text-xs font-mono rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 ${activeTab === 'education' ? 'bg-white/80  dark:bg-white/10 text-cyan-600 dark:text-cyan-400 shadow-sm font-bold' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-white/50 dark:hover:bg-white/5'}`}>EDUCATION</button>
                         </div>
 
                         <ScrollableContent className="space-y-4 pr-2">

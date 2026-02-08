@@ -9,13 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@react-three/fiber": "^9.4.2",
+    "embla-carousel-auto-scroll": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.23.26",
+    "lenis": "1.1.14",
+    "lucide-react": "^0.563.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "@react-three/fiber": "^9.4.2",
     "three": "^0.182.0",
-    "framer-motion": "^12.23.26",
-    "zustand": "^5.0.9",
-    "lenis": "1.1.14"
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

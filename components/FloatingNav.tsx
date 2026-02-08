@@ -5,6 +5,7 @@ import { useScrollStore } from '../store/useScrollStore';
 import { useThemeStore } from '../store/useThemeStore';
 import { portfolioData } from '../data/portfolioData';
 import { PortfolioState, STATE_COUNT } from '../types';
+import { Home, User, Briefcase, Code2, FileText, FolderOpen, Sparkles, Send } from 'lucide-react';
 
 interface FloatingNavProps {
   onNavigate: (index: number) => void;
@@ -34,12 +35,28 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({ onNavigate }) => {
     return items;
   }, []);
 
+  // Icon mapping for mobile view
+  const getIcon = (index: number) => {
+    const iconProps = { size: 16, strokeWidth: 2, className: "shrink-0" };
+    switch (index) {
+      case PortfolioState.HERO: return <Home {...iconProps} />;
+      case PortfolioState.ABOUT: return <User {...iconProps} />;
+      case PortfolioState.EXPERIENCE: return <Briefcase {...iconProps} />;
+      case PortfolioState.PROJECTS: return <FolderOpen {...iconProps} />;
+      case PortfolioState.KNOWLEDGE: return <Code2 {...iconProps} />;
+      case PortfolioState.WRITING: return <FileText {...iconProps} />;
+      case PortfolioState.PERSONAL: return <Sparkles {...iconProps} />;
+      case PortfolioState.SIGNAL: return <Send {...iconProps} />;
+      default: return <Home {...iconProps} />;
+    }
+  };
+
   return (
     <div className="fixed top-6 left-1/2 -translate-x-1/2 z-30 w-full max-w-4xl px-4 pointer-events-none">
       <div className="relative bg-white/70 dark:bg-black/60 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-full pl-2 pr-2 py-2 pointer-events-auto shadow-[0_10px_26px_rgba(15,23,42,0.12)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.35)] flex items-center transition-colors duration-500">
 
         {/* Navigation Items - Scrollable */}
-        <div className="flex-1 flex items-center gap-2 overflow-x-auto no-scrollbar mask-gradient px-2 md:px-4">
+        <div className="flex-1 flex items-center gap-1 md:gap-2 overflow-x-auto no-scrollbar mask-gradient px-1 md:px-4 scroll-smooth">
           {navItems.map((item) => {
             const isActive = currentIndex === item.index;
             return (
@@ -47,7 +64,7 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({ onNavigate }) => {
                 key={item.index}
                 onClick={() => onNavigate(item.index)}
                 className={`
-                            relative px-3 py-2 text-xs font-mono transition-all duration-300 whitespace-nowrap rounded-md group shrink-0
+                            relative px-2 md:px-3 py-2 text-xs font-mono transition-all duration-300 whitespace-nowrap rounded-md group shrink-0
                             ${isActive
                     ? 'text-slate-900 dark:text-white bg-slate-200/50 dark:bg-white/10 font-bold'
                     : 'text-slate-500 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/5'}
@@ -56,9 +73,13 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({ onNavigate }) => {
                 {isActive && (
                   <span className="absolute left-1 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full mr-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
                 )}
-                <span className={isActive ? 'pl-3' : ''}>
+                <span className={`flex items-center gap-2 ${isActive ? 'pl-3' : ''}`}>
+                  {/* Mobile: Icon only */}
+                  <span className="md:hidden flex items-center" aria-label={item.navLabel}>
+                    {getIcon(item.index)}
+                  </span>
+                  {/* Desktop: Text label */}
                   <span className="hidden md:inline">{item.navLabel}</span>
-                  <span className="md:hidden">{item.navLabel.substring(0, 3)}</span>
                 </span>
               </button>
             );
@@ -66,14 +87,14 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({ onNavigate }) => {
         </div>
 
         {/* Separator */}
-        <div className="w-px h-6 bg-slate-300 dark:bg-white/10 mx-1 md:mx-2 shrink-0 transition-colors"></div>
+        <div className="w-px h-6 bg-slate-300 dark:bg-white/10 mx-0.5 md:mx-2 shrink-0 transition-colors"></div>
 
         {/* Resume Button */}
         <a
           href={portfolioData.resume.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative group flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-slate-100 dark:bg-black/40 hover:bg-slate-200 dark:hover:bg-black/60 transition-all shrink-0 ml-1 border border-slate-200 dark:border-transparent"
+          className="relative group flex items-center gap-1 md:gap-2 px-2 py-1.5 md:px-4 md:py-2 rounded-full bg-slate-100 dark:bg-black/40 hover:bg-slate-200 dark:hover:bg-black/60 transition-all shrink-0 ml-0.5 md:ml-1 border border-slate-200 dark:border-transparent"
         >
           {/* Gradient Border Rim (Dark Mode) */}
           <div className="absolute inset-0 rounded-full p-[1px] bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-red-500/40 opacity-0 dark:opacity-100 group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-red-400 transition-colors -z-10">
