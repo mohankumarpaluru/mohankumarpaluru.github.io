@@ -25,8 +25,8 @@ export const Personal: React.FC = () => {
                         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                             {portfolioData.personalEndeavors.map((item, i) => (
                                 <GlowCard key={i} className="p-5 md:p-6 group h-full">
-                                    <div className={`text-2xl md:text-3xl mb-3 text-transparent bg-clip-text bg-gradient-to-br from-teal-500 to-cyan-500 group-hover:scale-110 transition-transform origin-left`}>✦</div>
-                                    <h3 className="font-bold text-lg text-slate-800 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-200 transition-colors">{item.title}</h3>
+                                    <div className={`text-2xl md:text-3xl mb-3 text-transparent bg-clip-text bg-gradient-to-br from-blue-500 to-cyan-500 group-hover:scale-110 transition-transform origin-left`}>✦</div>
+                                    <h3 className="font-bold text-lg text-slate-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{item.title}</h3>
                                     <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.description}</p>
                                 </GlowCard>
                             ))}

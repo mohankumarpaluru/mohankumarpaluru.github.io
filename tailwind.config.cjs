@@ -17,10 +17,10 @@ module.exports = {
                 mono: ['JetBrains Mono', 'monospace'],
             },
             colors: {
-                'accent': '#0d9488', // Teal 600 (light primary)
-                'accent-secondary': '#ea580c', // Orange 600 (ember accent)
-                'bg-dark': '#050505', // Deep black
-                'bg-light': '#f8fafb', // Cool off-white
+                'accent': '#3b82f6', // Blue 500 (primary)
+                'accent-secondary': '#06b6d4', // Cyan 500 (smooth bridge)
+                'bg-dark': '#0a1628', // Deep navy
+                'bg-light': '#f8fafc', // Slate 50
                 // Semantic tokens via CSS custom properties
                 'primary': 'var(--color-primary)',
                 'primary-strong': 'var(--color-primary-strong)',

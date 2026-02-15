@@ -52,8 +52,8 @@ export const Knowledge: React.FC = () => {
                                     const proficiencyColor = skill.level > 75
                                         ? 'text-cyan-600 dark:text-cyan-400'
                                         : skill.level > 50
-                                            ? 'text-teal-600 dark:text-teal-400'
-                                            : 'text-teal-600 dark:text-teal-400';
+                                            ? 'text-blue-600 dark:text-blue-400'
+                                            : 'text-blue-600 dark:text-blue-400';
 
                                     return (
                                         <div key={skill.name} className="group">
@@ -87,12 +87,12 @@ export const Knowledge: React.FC = () => {
                                                 {/* Gradient Fill Bar with Soft Glow Fade */}
                                                 <div
                                                     className="absolute inset-0 h-full rounded-full 
-                                                           bg-gradient-to-r from-cyan-500 via-teal-600 to-teal-700 
-                                                           group-hover:from-cyan-400 group-hover:via-teal-500 group-hover:to-teal-600 
+                                                           bg-gradient-to-r from-cyan-500 via-blue-600 to-blue-700 
+                                                           group-hover:from-cyan-400 group-hover:via-blue-500 group-hover:to-blue-600 
                                                            transition-all duration-700 ease-out 
-                                                           shadow-[0_0_16px_rgba(45,212,191,0.6)]
+                                                           shadow-[0_0_16px_rgba(59,130,246,0.6)]
                                                            after:absolute after:right-0 after:inset-y-0 after:w-4
-                                                           after:bg-gradient-to-r after:from-transparent after:to-teal-400/40
+                                                           after:bg-gradient-to-r after:from-transparent after:to-blue-400/40
                                                            after:blur-sm"
                                                     style={{ width: `${skill.level}%` }}
                                                 />

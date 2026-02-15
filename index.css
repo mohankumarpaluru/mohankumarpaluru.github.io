@@ -1,55 +1,63 @@
-/* === TEAL & EMBER — COLOR TOKENS === */
+/* === DEEP OCEAN — COLOR TOKENS === */
 
 /* Light Mode (default) */
 :root {
-  --color-bg: #f8fafb;
+  --color-bg: #fafafa;
+  /* Neutral 50 (Warmer than Slate) */
   --color-surface: #f1f5f9;
   --color-surface-elevated: #ffffff;
-  --color-primary: #0d9488;
-  --color-primary-strong: #0f766e;
-  --color-accent: #ea580c;
-  --color-accent-strong: #c2410c;
-  --color-text: #0f172a;
-  --color-text-muted: #475569;
+  --color-primary: #2563eb;
+  --color-primary-strong: #1d4ed8;
+  --color-accent: #06b6d4;
+  --color-accent-strong: #0891b2;
+  --color-text: #334155;
+  /* Slate 700 (Softer body text) */
+  --color-text-muted: #64748b;
+  /* Slate 500 (Lighter muted) */
   --color-text-on-primary: #ffffff;
   --color-border: #e2e8f0;
   --color-border-strong: #cbd5e1;
-  --color-focus-ring: #14b8a6;
-  --color-gradient-from: #0d9488;
+  --color-focus-ring: #3b82f6;
+  --color-gradient-from: #2563eb;
   --color-gradient-via: #0891b2;
-  --color-gradient-to: #ea580c;
+  --color-gradient-to: #0d9488;
   --color-success: #16a34a;
   --color-warning: #d97706;
   --color-error: #dc2626;
-  --color-glow: rgba(13, 148, 136, 0.35);
-  --elevation-overlay-from: rgba(248, 250, 251, 0.5);
-  --elevation-overlay-to: rgba(248, 250, 251, 0.8);
+  --color-glow: rgba(59, 130, 246, 0.35);
+  --elevation-overlay-from: rgba(248, 250, 252, 0.5);
+  --elevation-overlay-to: rgba(248, 250, 252, 0.8);
+  /* Hero Scrim Tokens (Light Mode) */
+  --hero-scrim-desktop: linear-gradient(105deg, rgba(250, 250, 250, 0.95) 20%, rgba(250, 250, 250, 0.8) 50%, rgba(250, 250, 250, 0) 100%);
+  --hero-scrim-mobile: linear-gradient(to top, rgba(250, 250, 250, 0.95) 10%, rgba(250, 250, 250, 0.8) 40%, rgba(250, 250, 250, 0) 100%);
 }
 
 /* Dark Mode */
 .dark {
-  --color-bg: #050505;
-  --color-surface: rgba(0, 0, 0, 0.7);
-  --color-surface-elevated: rgba(0, 0, 0, 0.9);
-  --color-primary: #2dd4bf;
-  --color-primary-strong: #14b8a6;
-  --color-accent: #fb923c;
-  --color-accent-strong: #f97316;
+  --color-bg: #0a1628;
+  --color-surface: rgba(10, 22, 40, 0.7);
+  --color-surface-elevated: rgba(10, 22, 40, 0.9);
+  --color-primary: #60a5fa;
+  --color-primary-strong: #3b82f6;
+  --color-accent: #22d3ee;
+  --color-accent-strong: #06b6d4;
   --color-text: #f1f5f9;
   --color-text-muted: #94a3b8;
-  --color-text-on-primary: #042f2e;
+  --color-text-on-primary: #0f172a;
   --color-border: rgba(255, 255, 255, 0.1);
   --color-border-strong: rgba(255, 255, 255, 0.2);
-  --color-focus-ring: #2dd4bf;
-  --color-gradient-from: #2dd4bf;
+  --color-focus-ring: #60a5fa;
+  --color-gradient-from: #60a5fa;
   --color-gradient-via: #22d3ee;
-  --color-gradient-to: #fb923c;
+  --color-gradient-to: #2dd4bf;
   --color-success: #4ade80;
   --color-warning: #fbbf24;
   --color-error: #f87171;
-  --color-glow: rgba(45, 212, 191, 0.35);
-  --elevation-overlay-from: rgba(10, 10, 20, 0.8);
-  --elevation-overlay-to: rgba(10, 10, 20, 0.95);
+  --color-glow: rgba(96, 165, 250, 0.35);
+  --elevation-overlay-from: rgba(10, 22, 40, 0.8);
+  --elevation-overlay-to: rgba(10, 22, 40, 0.9);
+  --hero-scrim-desktop: none;
+  --hero-scrim-mobile: none;
 }
 
 @tailwind base;

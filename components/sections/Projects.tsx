@@ -38,11 +38,11 @@ export const Projects: React.FC = () => {
                                         href={featuredProjects[0].link}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="group relative h-full min-h-[200px] md:min-h-[300px] flex flex-col cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(8,12,24,0.12)] dark:hover:shadow-[0_16px_32px_rgba(0,0,0,0.45),0_0_0_1px_rgba(13,148,136,0.18)] hover:border-teal-500/25"
+                                        className="group relative h-full min-h-[200px] md:min-h-[300px] flex flex-col cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(8,12,24,0.12)] dark:hover:shadow-[0_16px_32px_rgba(0,0,0,0.45),0_0_0_1px_rgba(59,130,246,0.18)] hover:border-blue-500/25"
                                     >
                                         <div className={cardScrim}></div>
 
-                                        <div className="relative z-10 w-full h-28 md:h-40 bg-gradient-to-br from-teal-100 via-cyan-50 to-orange-100 dark:from-teal-900/20 dark:via-cyan-900/20 dark:to-orange-900/20 overflow-hidden">
+                                        <div className="relative z-10 w-full h-28 md:h-40 bg-gradient-to-br from-blue-100 via-cyan-50 to-teal-100 dark:from-blue-900/20 dark:via-cyan-900/20 dark:to-teal-900/20 overflow-hidden">
                                             {featuredProjects[0].image ? (
                                                 <img
                                                     src={featuredProjects[0].image}
@@ -61,13 +61,13 @@ export const Projects: React.FC = () => {
                                                 <h3 className={`font-bold text-lg md:text-xl text-slate-800 dark:text-slate-100 ${hoverGradientText} transition-all pr-2`}>{featuredProjects[0].title}</h3>
                                                 <ExternalLink
                                                     size={18}
-                                                    className="shrink-0 text-slate-500 dark:text-slate-400 group-hover:text-teal-500 dark:group-hover:text-teal-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                                                    className="shrink-0 text-slate-500 dark:text-slate-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
                                                 />
                                             </div>
                                             <p className="text-xs md:text-sm text-slate-600 dark:text-slate-200 opacity-95 mb-3 flex-grow leading-relaxed">{featuredProjects[0].description}</p>
                                             <div className="flex flex-wrap gap-1.5 mt-auto">
                                                 {featuredProjects[0].tags.map(tag => (
-                                                    <span key={tag} className="text-[10px] font-mono text-[#0d9488]/92 dark:text-teal-300 bg-[#0d9488]/10 dark:bg-black/30 px-2 py-0.5 rounded border border-[#0d9488]/[0.18] dark:border-white/10 group-hover:border-teal-500/30 transition-colors">#{tag}</span>
+                                                    <span key={tag} className="text-[10px] font-mono text-[#2563eb]/92 dark:text-blue-300 bg-[#2563eb]/10 dark:bg-black/30 px-2 py-0.5 rounded border border-[#2563eb]/[0.18] dark:border-white/10 group-hover:border-blue-500/30 transition-colors">#{tag}</span>
                                                 ))}
                                             </div>
                                         </div>
@@ -83,7 +83,7 @@ export const Projects: React.FC = () => {
                                         href={featuredProjects[1].link}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="group relative h-full min-h-[170px] md:min-h-[140px] flex flex-col cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(8,12,24,0.12)] dark:hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] hover:border-teal-500/25"
+                                        className="group relative h-full min-h-[170px] md:min-h-[140px] flex flex-col cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(8,12,24,0.12)] dark:hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] hover:border-blue-500/25"
                                     >
                                         <div className={cardScrim}></div>
 
@@ -104,12 +104,12 @@ export const Projects: React.FC = () => {
                                         <div className="relative z-10 p-3 flex flex-col flex-1">
                                             <div className="flex justify-between items-start mb-2">
                                                 <h3 className={`font-bold text-sm md:text-base text-slate-800 dark:text-slate-100 ${hoverGradientText} pr-1`}>{featuredProjects[1].title}</h3>
-                                                <ExternalLink size={14} className="shrink-0 text-slate-500 dark:text-slate-400 group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-all" />
+                                                <ExternalLink size={14} className="shrink-0 text-slate-500 dark:text-slate-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all" />
                                             </div>
                                             <p className="text-[10px] md:text-xs text-slate-600 dark:text-slate-200 mb-2 line-clamp-2">{featuredProjects[1].description}</p>
                                             <div className="flex flex-wrap gap-1 mt-auto">
                                                 {featuredProjects[1].tags.map(tag => (
-                                                    <span key={tag} className="text-[9px] font-mono text-[#0d9488]/92 dark:text-teal-300 bg-[#0d9488]/10 dark:bg-black/30 px-1.5 py-0.5 rounded border border-[#0d9488]/[0.18] dark:border-white/10">#{tag}</span>
+                                                    <span key={tag} className="text-[9px] font-mono text-[#2563eb]/92 dark:text-blue-300 bg-[#2563eb]/10 dark:bg-black/30 px-1.5 py-0.5 rounded border border-[#2563eb]/[0.18] dark:border-white/10">#{tag}</span>
                                                 ))}
                                             </div>
                                         </div>
@@ -131,12 +131,12 @@ export const Projects: React.FC = () => {
                                         <div className="relative z-10 p-3 flex flex-col h-full">
                                             <div className="flex justify-between items-start mb-2">
                                                 <h3 className={`font-semibold text-xs md:text-sm text-slate-800 dark:text-slate-100 ${hoverGradientText} pr-1`}>{proj.title}</h3>
-                                                <ExternalLink size={12} className="shrink-0 text-slate-400 dark:text-slate-500 group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-all" />
+                                                <ExternalLink size={12} className="shrink-0 text-slate-400 dark:text-slate-500 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all" />
                                             </div>
                                             <p className="text-[10px] text-slate-600 dark:text-slate-300 mb-2 line-clamp-2 flex-grow">{proj.description}</p>
                                             <div className="flex flex-wrap gap-1 mt-auto">
                                                 {proj.tags.map(tag => (
-                                                    <span key={tag} className="text-[9px] font-mono text-[#0d9488]/92 dark:text-teal-300 bg-[#0d9488]/10 dark:bg-black/30 px-1.5 py-0.5 rounded border border-[#0d9488]/[0.18] dark:border-white/10">#{tag}</span>
+                                                    <span key={tag} className="text-[9px] font-mono text-[#2563eb]/92 dark:text-blue-300 bg-[#2563eb]/10 dark:bg-black/30 px-1.5 py-0.5 rounded border border-[#2563eb]/[0.18] dark:border-white/10">#{tag}</span>
                                                 ))}
                                             </div>
                                         </div>
@@ -152,11 +152,11 @@ export const Projects: React.FC = () => {
                                         href={featuredProjects[2].link}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="group relative h-full min-h-[160px] md:min-h-[140px] flex flex-col cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(8,12,24,0.12)] dark:hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] hover:border-teal-500/25"
+                                        className="group relative h-full min-h-[160px] md:min-h-[140px] flex flex-col cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(8,12,24,0.12)] dark:hover:shadow-[0_16px_32px_rgba(0,0,0,0.45)] hover:border-blue-500/25"
                                     >
                                         <div className={cardScrim}></div>
 
-                                        <div className="relative z-10 w-full h-20 md:h-24 bg-gradient-to-br from-orange-100 to-amber-100 dark:from-orange-900/20 dark:to-amber-900/20 overflow-hidden">
+                                        <div className="relative z-10 w-full h-20 md:h-24 bg-gradient-to-br from-cyan-100 to-teal-100 dark:from-cyan-900/20 dark:to-teal-900/20 overflow-hidden">
                                             {featuredProjects[2].image ? (
                                                 <img
                                                     src={featuredProjects[2].image}
@@ -173,12 +173,12 @@ export const Projects: React.FC = () => {
                                         <div className="relative z-10 p-3 flex flex-col flex-1">
                                             <div className="flex justify-between items-start mb-2">
                                                 <h3 className={`font-bold text-sm md:text-base text-slate-800 dark:text-slate-100 ${hoverGradientText} pr-1`}>{featuredProjects[2].title}</h3>
-                                                <ExternalLink size={14} className="shrink-0 text-slate-500 dark:text-slate-400 group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-all" />
+                                                <ExternalLink size={14} className="shrink-0 text-slate-500 dark:text-slate-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all" />
                                             </div>
                                             <p className="text-[10px] md:text-xs text-slate-600 dark:text-slate-200 mb-2 line-clamp-2">{featuredProjects[2].description}</p>
                                             <div className="flex flex-wrap gap-1 mt-auto">
                                                 {featuredProjects[2].tags.map(tag => (
-                                                    <span key={tag} className="text-[9px] font-mono text-[#0d9488]/92 dark:text-teal-300 bg-[#0d9488]/10 dark:bg-black/30 px-1.5 py-0.5 rounded border border-[#0d9488]/[0.18] dark:border-white/10">#{tag}</span>
+                                                    <span key={tag} className="text-[9px] font-mono text-[#2563eb]/92 dark:text-blue-300 bg-[#2563eb]/10 dark:bg-black/30 px-1.5 py-0.5 rounded border border-[#2563eb]/[0.18] dark:border-white/10">#{tag}</span>
                                                 ))}
                                             </div>
                                         </div>
@@ -200,12 +200,12 @@ export const Projects: React.FC = () => {
                                         <div className="relative z-10 p-3 flex flex-col h-full">
                                             <div className="flex justify-between items-start mb-2">
                                                 <h3 className={`font-semibold text-xs md:text-sm text-slate-800 dark:text-slate-100 ${hoverGradientText} pr-1`}>{proj.title}</h3>
-                                                <ExternalLink size={12} className="shrink-0 text-slate-400 dark:text-slate-500 group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-all" />
+                                                <ExternalLink size={12} className="shrink-0 text-slate-400 dark:text-slate-500 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-all" />
                                             </div>
                                             <p className="text-[10px] text-slate-600 dark:text-slate-300 mb-2 line-clamp-2 flex-grow">{proj.description}</p>
                                             <div className="flex flex-wrap gap-1 mt-auto">
                                                 {proj.tags.map(tag => (
-                                                    <span key={tag} className="text-[9px] font-mono text-[#0d9488]/92 dark:text-teal-300 bg-[#0d9488]/10 dark:bg-black/30 px-1.5 py-0.5 rounded border border-[#0d9488]/[0.18] dark:border-white/10">#{tag}</span>
+                                                    <span key={tag} className="text-[9px] font-mono text-[#2563eb]/92 dark:text-blue-300 bg-[#2563eb]/10 dark:bg-black/30 px-1.5 py-0.5 rounded border border-[#2563eb]/[0.18] dark:border-white/10">#{tag}</span>
                                                 ))}
                                             </div>
                                         </div>
