@@ -4,16 +4,30 @@ import { useScrollStore } from '../store/useScrollStore';
 import { STATE_COUNT } from '../types';
 
 // Logic to determine opacity based on continuous scroll progress
-export function useSectionOpacity(index: number, visibleRange = 0.35) {
+// "Plateau" behavior: remains 100% visible for a central range, then fades quickly.
+export function useSectionOpacity(index: number, visibleRange = 0.45) {
   const scrollProgress = useScrollStore(s => s.scrollProgress);
   const currentFloatIndex = scrollProgress * (STATE_COUNT - 1);
   const distance = Math.abs(currentFloatIndex - index);
-  let opacity = 0;
-  if (distance < visibleRange) {
-    const normalizedDist = distance / visibleRange;
-    opacity = 1 - Math.pow(normalizedDist, 2);
+
+  // Define the plateau (fully visible range). 
+  // 30% of the visible range is fully opaque on either side of center.
+  const plateauRatio = 0.30;
+  const plateauRange = visibleRange * plateauRatio;
+
+  if (distance < plateauRange) {
+    return 1;
+  } else if (distance < visibleRange) {
+    // Fade out over the remaining distance
+    const fadeRange = visibleRange - plateauRange;
+    const distanceIntoFade = distance - plateauRange;
+    const normalizedFade = distanceIntoFade / fadeRange;
+
+    // Pure quadratic easing for the smoothest possible fade-out
+    return Math.max(0, 1 - Math.pow(normalizedFade, 2.0));
   }
-  return Math.max(0, opacity);
+
+  return 0;
 }
 
 // Internal scroll handler wrapper with flex-grow to fill available space
