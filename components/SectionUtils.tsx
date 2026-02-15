@@ -67,21 +67,21 @@ export const Section: React.FC<{ index: number; children: React.ReactNode; class
 // Helper for Clarity Headers
 export const ClarityHeader: React.FC<{ id: string; hint: string }> = ({ id, hint }) => (
   <div className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-4 mb-2 md:mb-4 opacity-80 shrink-0">
-    <h2 className="dark:text-sky-400 text-cyan-600 text-xs md:text-sm font-mono tracking-widest">{id}</h2>
+    <h2 className="dark:text-teal-400 text-teal-600 text-xs md:text-sm font-mono tracking-widest">{id}</h2>
     <span className="hidden md:inline dark:text-slate-600 text-slate-400 font-mono text-sm">//</span>
     <span className="dark:text-slate-500 text-slate-500 font-mono text-[10px] md:text-xs uppercase tracking-wider">{hint}</span>
   </div>
 );
 
 // Shared Gradient Strings - Adjusted for visibility in both modes
-export const gradientText = "bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent";
-export const hoverGradientText = "group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:via-purple-600 group-hover:to-pink-600 dark:group-hover:from-blue-400 dark:group-hover:via-purple-400 dark:group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent";
-export const nameGradient = "bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 dark:from-indigo-200 dark:via-indigo-300 dark:to-purple-300 bg-clip-text text-transparent";
+export const gradientText = "bg-gradient-to-r from-teal-600 via-cyan-600 to-orange-600 dark:from-teal-400 dark:via-cyan-400 dark:to-orange-400 bg-clip-text text-transparent";
+export const hoverGradientText = "group-hover:bg-gradient-to-r group-hover:from-teal-600 group-hover:via-cyan-600 group-hover:to-orange-600 dark:group-hover:from-teal-400 dark:group-hover:via-cyan-400 dark:group-hover:to-orange-400 group-hover:bg-clip-text group-hover:text-transparent";
+export const nameGradient = "bg-gradient-to-br from-teal-600 via-teal-500 to-cyan-500 dark:from-teal-200 dark:via-teal-300 dark:to-cyan-300 bg-clip-text text-transparent";
 
 // Scrim for readability
 // Dark mode: dark scrim. Light mode: subtle white fade or none needed if background is solid.
 // We keep a very subtle gradient in light mode for depth.
-export const cardScrim = "absolute inset-0 bg-gradient-to-b from-[#f0f4f8]/50 to-[#f0f4f8]/80 dark:from-[#0a0a14]/80 dark:to-[#0a0a14]/95 z-0 pointer-events-none transition-colors duration-500";
+export const cardScrim = "absolute inset-0 bg-gradient-to-b from-[var(--elevation-overlay-from)] to-[var(--elevation-overlay-to)] z-0 pointer-events-none transition-colors duration-500";
 
 // Helper to render title with data-driven highlight
 export const RenderTitle: React.FC<{ title: string; highlight?: string; className?: string }> = ({ title, highlight, className }) => {

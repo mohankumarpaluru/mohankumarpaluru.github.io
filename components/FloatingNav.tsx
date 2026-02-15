@@ -71,7 +71,7 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({ onNavigate }) => {
                         `}
               >
                 {isActive && (
-                  <span className="absolute left-1 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full mr-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
+                  <span className="absolute left-1 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full mr-2 bg-gradient-to-r from-teal-500 via-cyan-500 to-orange-500" />
                 )}
                 <span className={`flex items-center gap-2 ${isActive ? 'pl-3' : ''}`}>
                   {/* Mobile: Icon only */}
@@ -97,7 +97,7 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({ onNavigate }) => {
           className="relative group flex items-center gap-1 md:gap-2 px-2 py-1.5 md:px-4 md:py-2 rounded-full bg-slate-100 dark:bg-black/40 hover:bg-slate-200 dark:hover:bg-black/60 transition-all shrink-0 ml-0.5 md:ml-1 border border-slate-200 dark:border-transparent"
         >
           {/* Gradient Border Rim (Dark Mode) */}
-          <div className="absolute inset-0 rounded-full p-[1px] bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-red-500/40 opacity-0 dark:opacity-100 group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-red-400 transition-colors -z-10">
+          <div className="absolute inset-0 rounded-full p-[1px] bg-gradient-to-r from-teal-500/40 via-cyan-500/40 to-orange-500/40 opacity-0 dark:opacity-100 group-hover:from-teal-400 group-hover:via-cyan-400 group-hover:to-orange-400 transition-colors -z-10">
             <div className="w-full h-full bg-black/80 rounded-full" />
           </div>
 
@@ -123,7 +123,7 @@ export const FloatingNav: React.FC<FloatingNavProps> = ({ onNavigate }) => {
         {/* Glowing Progress Line - Absolute Bottom */}
         <div className="absolute bottom-0 left-6 right-6 h-[1.5px] bg-slate-200 dark:bg-white/5 overflow-hidden rounded-full pointer-events-none">
           <motion.div
-            className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-[0_0_15px_rgba(168,85,247,0.5)]"
+            className="h-full bg-gradient-to-r from-teal-500 via-cyan-500 to-orange-500 shadow-[0_0_15px_var(--color-glow)]"
             style={{
               width: '100%',
               scaleX: scrollProgress,

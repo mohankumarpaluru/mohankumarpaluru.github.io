@@ -33,7 +33,7 @@ export const About: React.FC = () => {
                 </div>
 
                 <div className="bg-slate-50 dark:bg-[#06080c]/80 backdrop-blur-xl p-6 md:p-10 rounded-xl border border-slate-900/5 dark:border-white/10 shadow-[0_18px_36px_rgba(4,8,20,0.06),inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-2xl relative overflow-hidden flex flex-col h-auto max-h-full transition-all duration-500 group flex-1">
-                    <div className="absolute top-0 left-0 right-0 h-[6px] rounded-t-[10px] bg-gradient-to-r from-[#6d5df6] to-[#ff7aa3] opacity-85 dark:opacity-100"></div>
+                    <div className="absolute top-0 left-0 right-0 h-[6px] rounded-t-[10px] bg-gradient-to-r from-[#0d9488] to-[#ea580c] opacity-85 dark:opacity-100"></div>
 
                     {/* Responsive Layout */}
                     <div className="flex flex-col md:flex-row landscape:flex-row gap-6 md:gap-10 h-full min-h-0 items-center">
@@ -42,7 +42,7 @@ export const About: React.FC = () => {
                         <div className="md:hidden landscape:hidden shrink-0 flex justify-center w-full max-h-[22vh]">
                             <div className="relative w-[140px] h-[140px]">
                                 {/* Organic Shape Mask */}
-                                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-600 opacity-30 blur-md animate-spin-slow" style={{ borderRadius: '48% 52% 46% 54% / 55% 45% 55% 45%' }}></div>
+                                <div className="absolute inset-0 bg-gradient-to-tr from-teal-500 to-cyan-600 opacity-30 blur-md animate-spin-slow" style={{ borderRadius: '48% 52% 46% 54% / 55% 45% 55% 45%' }}></div>
                                 <div className="relative w-full h-full overflow-hidden shadow-2xl" style={{ borderRadius: '48% 52% 46% 54% / 55% 45% 55% 45%' }}>
                                     <img src="/assets/mohan.png" alt="Mohan Kumar Paluru" className="w-full h-full object-cover" />
                                 </div>
@@ -69,10 +69,10 @@ export const About: React.FC = () => {
                         <div className="hidden md:flex landscape:flex w-[35%] landscape:w-[40%] items-center justify-center shrink-0 h-full perspective-1000">
                             <div className="relative w-[280px] h-[340px] md:w-[320px] md:h-[380px] landscape:w-[200px] landscape:h-[240px]" style={imageTransform}>
 
-                                <div className="absolute inset-0 rounded-[40px] blur-2xl opacity-40 bg-gradient-to-tr from-cyan-500/20 to-purple-500/20 pointer-events-none transform translate-z-[-20px]" />
+                                <div className="absolute inset-0 rounded-[40px] blur-2xl opacity-40 bg-gradient-to-tr from-teal-500/20 to-cyan-500/20 pointer-events-none transform translate-z-[-20px]" />
 
                                 <div
-                                    className="absolute inset-[-10px] bg-[conic-gradient(from_0deg,#3b82f6,#8b5cf6,#f43f5e,#3b82f6)] opacity-35 blur-xl transition-all duration-1000"
+                                    className="absolute inset-[-10px] bg-[conic-gradient(from_0deg,#0d9488,#0891b2,#ea580c,#0d9488)] opacity-35 blur-xl transition-all duration-1000"
                                     style={{
                                         borderRadius: '48% 52% 46% 54% / 55% 45% 55% 45%',
                                         transform: 'rotate(-5deg)'

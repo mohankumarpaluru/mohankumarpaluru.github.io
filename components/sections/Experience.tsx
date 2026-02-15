@@ -64,8 +64,8 @@ export const Experience: React.FC = () => {
 
                         {/* Tab Switcher */}
                         <div className="flex space-x-1 bg-slate-100 dark:bg-black/40 p-1 rounded-lg border border-slate-200 dark:border-white/10 w-fit mb-4 shrink-0 self-start md:self-auto transition-colors">
-                            <button onClick={() => setActiveTab('experience')} className={`px-4 py-1.5 text-xs font-mono rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 ${activeTab === 'experience' ? 'bg-white/80  dark:bg-white/10 text-cyan-600 dark:text-cyan-400 shadow-sm font-bold' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-white/50 dark:hover:bg-white/5'}`}>EXPERIENCE</button>
-                            <button onClick={() => setActiveTab('education')} className={`px-4 py-1.5 text-xs font-mono rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 ${activeTab === 'education' ? 'bg-white/80  dark:bg-white/10 text-cyan-600 dark:text-cyan-400 shadow-sm font-bold' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-white/50 dark:hover:bg-white/5'}`}>EDUCATION</button>
+                            <button onClick={() => setActiveTab('experience')} className={`px-4 py-1.5 text-xs font-mono rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500/50 ${activeTab === 'experience' ? 'bg-white/80  dark:bg-white/10 text-cyan-600 dark:text-cyan-400 shadow-sm font-bold' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-white/50 dark:hover:bg-white/5'}`}>EXPERIENCE</button>
+                            <button onClick={() => setActiveTab('education')} className={`px-4 py-1.5 text-xs font-mono rounded-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500/50 ${activeTab === 'education' ? 'bg-white/80  dark:bg-white/10 text-cyan-600 dark:text-cyan-400 shadow-sm font-bold' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-white/50 dark:hover:bg-white/5'}`}>EDUCATION</button>
                         </div>
 
                         <ScrollableContent className="space-y-4 pr-2">
@@ -75,7 +75,7 @@ export const Experience: React.FC = () => {
                                     {portfolioData.experience.map((exp, i) => (
                                         <GlowCard
                                             key={i}
-                                            className="p-4 md:p-5 overflow-hidden relative group hover:-translate-y-1 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-indigo-500/50 rounded-xl"
+                                            className="p-4 md:p-5 overflow-hidden relative group hover:-translate-y-1 hover:shadow-lg transition-all duration-300 focus-within:ring-2 focus-within:ring-teal-500/50 rounded-xl"
                                             tabIndex={0}
                                             role="article"
                                         >
@@ -87,7 +87,7 @@ export const Experience: React.FC = () => {
                                                     </h4>
                                                     <span className="text-xs font-mono text-slate-700 dark:text-slate-400 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded mt-1 md:mt-0 whitespace-nowrap border border-slate-200 dark:border-white/5 font-semibold">{exp.period}</span>
                                                 </div>
-                                                <div className="text-indigo-600 dark:text-indigo-400 text-xs md:text-sm font-medium mb-3">{exp.company}</div>
+                                                <div className="text-teal-600 dark:text-teal-400 text-xs md:text-sm font-medium mb-3">{exp.company}</div>
                                                 <p className="text-xs md:text-sm text-slate-600 dark:text-slate-200 opacity-95 leading-relaxed">
                                                     {exp.description}
                                                 </p>
@@ -103,7 +103,7 @@ export const Experience: React.FC = () => {
                                     {portfolioData.education.map((edu, i) => (
                                         <GlowCard
                                             key={i}
-                                            className="p-4 overflow-hidden relative group hover:shadow-md transition-all focus-within:ring-2 focus-within:ring-indigo-500/50"
+                                            className="p-4 overflow-hidden relative group hover:shadow-md transition-all focus-within:ring-2 focus-within:ring-teal-500/50"
                                             tabIndex={0}
                                             role="article"
                                         >
@@ -113,7 +113,7 @@ export const Experience: React.FC = () => {
                                                     <h4 className={`text-base font-bold text-slate-800 dark:text-slate-200 leading-tight ${hoverGradientText} transition-all`}>
                                                         {edu.degree}
                                                     </h4>
-                                                    <div className="text-sm text-indigo-600 dark:text-indigo-400 mt-1">{edu.institution}</div>
+                                                    <div className="text-sm text-teal-600 dark:text-teal-400 mt-1">{edu.institution}</div>
                                                 </div>
                                                 <div className="text-xs font-mono text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded border border-slate-200 dark:border-white/5 shrink-0 self-start sm:self-center font-semibold">
                                                     {edu.year}

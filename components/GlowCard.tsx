@@ -66,7 +66,7 @@ export const GlowCard: React.FC<GlowCardProps> = ({
         style={{ opacity }}
       >
         <div
-          className="absolute inset-0 dark:bg-gradient-to-r dark:from-blue-500/20 dark:via-purple-500/20 dark:to-pink-500/20 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 blur-xl"
+          className="absolute inset-0 dark:bg-gradient-to-r dark:from-teal-500/20 dark:via-cyan-500/20 dark:to-orange-500/20 bg-gradient-to-r from-teal-500/10 via-cyan-500/10 to-orange-500/10 blur-xl"
           style={{
             maskImage: `radial-gradient(350px circle at ${coords.x}px ${coords.y}px, black, transparent)`,
             WebkitMaskImage: `radial-gradient(350px circle at ${coords.x}px ${coords.y}px, black, transparent)`,

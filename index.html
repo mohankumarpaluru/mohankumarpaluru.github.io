@@ -67,10 +67,10 @@
   <style>
     body {
       margin: 0;
-      background-color: #050505;
-      color: #e2e8f0;
+      background-color: var(--color-bg, #050505);
+      color: var(--color-text, #f1f5f9);
       overflow: auto;
-      transition: background-color 0.5s ease;
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
 
     /* Ensure root has height to prevent collapse before JS hydration */
