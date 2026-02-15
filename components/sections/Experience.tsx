@@ -23,7 +23,7 @@ export const Experience: React.FC = () => {
 
     return (
         <Section index={PortfolioState.EXPERIENCE}>
-            <div className="relative z-30 w-full h-full">
+            <div className="relative w-full h-full">
                 {/* Soft Radial Mask */}
                 <div className="absolute -inset-8 z-[-1] rounded-[inherit] pointer-events-none opacity-0 lg:opacity-100
                 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,0)_70%)]

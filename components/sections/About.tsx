@@ -25,7 +25,7 @@ export const About: React.FC = () => {
 
     return (
         <Section index={PortfolioState.ABOUT}>
-            <div className="relative z-30 w-full h-full max-h-full flex flex-col">
+            <div className="relative w-full h-full max-h-full flex flex-col">
                 {/* Soft Radial Mask for Light Mode - Blocks particles under text but blooms around edges */}
                 <div className="absolute -inset-8 z-[-1] rounded-[inherit] pointer-events-none opacity-0 lg:opacity-100 transition-opacity duration-700
                 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,1)_0%,rgba(255,255,255,0)_70%)]
