@@ -57,7 +57,7 @@ export const Section: React.FC<{ index: number; children: React.ReactNode; class
          Container constrained to viewport height minus padding. 
          flex-col ensures children (Header + ScrollableContent) stack correctly without overflow.
       */}
-      <div className="max-w-6xl w-full h-full max-h-[85vh] pointer-events-auto dark:text-slate-100 text-slate-800 flex flex-col transition-colors duration-500 drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)] relative">
+      <div className="max-w-6xl w-full h-full max-h-[85vh] pointer-events-auto dark:text-slate-100 text-slate-800 flex flex-col transition-colors duration-500 shadow-sm relative z-10">
         {children}
       </div>
     </div>

@@ -88,7 +88,7 @@ const App: React.FC = () => {
         <Canvas
           camera={{ position: [0, 0, 12], fov: 35 }}
           dpr={[1, 2]}
-          gl={{ antialias: false, alpha: false }}
+          gl={{ antialias: false, alpha: true }}
         >
           {/* 3D Background color must match HTML background for blending */}
           {/* We can handle this inside ParticleSystem or via a reactive color component */}

@@ -58,7 +58,7 @@ export const Hero: React.FC = () => {
         </>
       )}
 
-      <div className="text-center md:text-left py-4 md:py-10 h-full flex flex-col justify-center relative z-30 pointer-events-auto">
+      <div className="text-center md:text-left py-4 md:py-10 h-full flex flex-col justify-center relative pointer-events-auto">
         <ClarityHeader id={sectionData.id} hint={sectionData.clarityHint} />
 
         <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-4 md:mb-6 leading-tight max-w-[20ch] md:max-w-none mx-auto md:mx-0 text-balance dark:shadow-none shadow-[0_0_0.6px_rgba(15,23,42,0.35),0_2px_10px_rgba(255,255,255,0.65)]">
