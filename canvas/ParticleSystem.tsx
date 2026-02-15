@@ -21,7 +21,7 @@ export const ParticleSystem: React.FC = () => {
   const hoverRef = useRef({ x: 0, y: 0 });
   const currentZOffset = useRef(0);
   const currentOpacity = useRef(0.8);
-  const currentColor = useRef(new THREE.Color(0x3b82f6)); // Init Blue
+  const currentColor = useRef(new THREE.Color(0x3b82f6)); // Init Blue 500
   const accumulatedRotation = useRef(0);
 
   // Define colors for Dark vs Light
@@ -29,15 +29,15 @@ export const ParticleSystem: React.FC = () => {
   const colors = useMemo(() => ({
     dark: {
       blue: new THREE.Color(0x3b82f6), // Blue 500
-      hero: new THREE.Color(0x6366f1), // Indigo 500
+      hero: new THREE.Color(0x60a5fa), // Blue 400
       signal: new THREE.Color(0xffffff), // White
-      bg: new THREE.Color(0x050505)
+      bg: new THREE.Color(0x0a1628)
     },
     light: {
-      blue: new THREE.Color(0x6b56e6), // Warmer Purple as requested
-      hero: new THREE.Color(0x6b56e6), // Matching for coherence
+      blue: new THREE.Color(0x2563eb), // Blue 600
+      hero: new THREE.Color(0x2563eb), // Matching for coherence
       signal: new THREE.Color(0x0f172a), // Slate 900
-      bg: new THREE.Color(0xf0f4f8)
+      bg: new THREE.Color(0xf8fafc)
     }
   }), []);
 

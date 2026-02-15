@@ -19,7 +19,7 @@ export const Signal: React.FC = () => {
 
                 <div className="flex flex-col items-center gap-6 md:gap-8 font-mono text-sm">
                     <a href={`mailto:${portfolioData.bio.contacts.email}`} className="relative group inline-block">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded blur opacity-25 group-hover:opacity-75 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-500 rounded blur opacity-25 group-hover:opacity-75 transition-opacity duration-500"></div>
                         <div className="relative border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-black text-slate-700 dark:text-slate-300 px-6 py-3 md:px-8 md:py-4 hover:text-black dark:hover:text-white transition-all text-sm md:text-lg flex items-center gap-2 rounded">
                             <span className={`${hoverGradientText} transition-all break-all`}>{portfolioData.bio.contacts.email}</span>
                         </div>
@@ -27,7 +27,7 @@ export const Signal: React.FC = () => {
 
                     <div className="flex flex-wrap justify-center gap-4 md:gap-8">
                         {Object.entries(portfolioData.bio.contacts.social).map(([key, url]) => (
-                            <a key={key} href={url} target="_blank" rel="noreferrer" className="text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white capitalize transition-colors text-sm md:text-lg hover:underline decoration-purple-500/50 underline-offset-4">
+                            <a key={key} href={url} target="_blank" rel="noreferrer" className="text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white capitalize transition-colors text-sm md:text-lg hover:underline decoration-blue-500/50 underline-offset-4">
                                 {key}
                             </a>
                         ))}

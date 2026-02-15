@@ -53,7 +53,7 @@ export const Knowledge: React.FC = () => {
                                         ? 'text-cyan-600 dark:text-cyan-400'
                                         : skill.level > 50
                                             ? 'text-blue-600 dark:text-blue-400'
-                                            : 'text-indigo-600 dark:text-indigo-400';
+                                            : 'text-blue-600 dark:text-blue-400';
 
                                     return (
                                         <div key={skill.name} className="group">
@@ -67,7 +67,7 @@ export const Knowledge: React.FC = () => {
                                                         {proficiencyLabel}
                                                     </span>
                                                 </div>
-                                                <span className="font-mono text-xs text-indigo-500 dark:text-indigo-300 opacity-80 font-semibold">
+                                                <span className="font-mono text-xs text-teal-500 dark:text-teal-300 opacity-80 font-semibold">
                                                     {skill.level}%
                                                 </span>
                                             </div>
@@ -87,12 +87,12 @@ export const Knowledge: React.FC = () => {
                                                 {/* Gradient Fill Bar with Soft Glow Fade */}
                                                 <div
                                                     className="absolute inset-0 h-full rounded-full 
-                                                           bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 
-                                                           group-hover:from-cyan-400 group-hover:via-blue-500 group-hover:to-indigo-500 
+                                                           bg-gradient-to-r from-cyan-500 via-blue-600 to-blue-700 
+                                                           group-hover:from-cyan-400 group-hover:via-blue-500 group-hover:to-blue-600 
                                                            transition-all duration-700 ease-out 
-                                                           shadow-[0_0_16px_rgba(6,182,212,0.6)]
+                                                           shadow-[0_0_16px_rgba(59,130,246,0.6)]
                                                            after:absolute after:right-0 after:inset-y-0 after:w-4
-                                                           after:bg-gradient-to-r after:from-transparent after:to-cyan-400/40
+                                                           after:bg-gradient-to-r after:from-transparent after:to-blue-400/40
                                                            after:blur-sm"
                                                     style={{ width: `${skill.level}%` }}
                                                 />

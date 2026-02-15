@@ -59,7 +59,7 @@ export const SkillsTicker: React.FC = () => {
                             shadow-sm
                             transition-all duration-300
                             group-hover:shadow-md group-hover:scale-105
-                            group-focus:outline-none group-focus:ring-2 group-focus:ring-cyan-500/50">
+                            group-focus:outline-none group-focus:ring-2 group-focus:ring-blue-500/50">
                                 <img
                                     src={skill.logo}
                                     alt=""

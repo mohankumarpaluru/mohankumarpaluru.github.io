@@ -40,9 +40,9 @@ export const Writing: React.FC = () => {
                                     key={i}
                                     className={`
                                         group relative rounded-lg overflow-hidden border border-slate-200 dark:border-white/10
-                                        hover:border-purple-500/50 dark:hover:border-purple-400/50
+                                        hover:border-blue-500/20 dark:hover:border-teal-400/50
                                         bg-white/60 dark:bg-transparent cursor-pointer
-                                        hover:z-50 hover:shadow-2xl dark:hover:shadow-[0_20px_40px_rgba(120,100,255,0.25)]
+                                        hover:z-50 hover:shadow-2xl dark:hover:shadow-[0_8px_16px_rgba(0,0,0,0.3),0_0_0_1px_rgba(59,130,246,0.15)]
                                         md:hover:w-[calc(200%+1rem)]
                                         ${isRightColumn ? 'md:origin-right' : 'md:origin-left'}
                                     `}
@@ -82,7 +82,7 @@ export const Writing: React.FC = () => {
                                                 {/* Date & Category */}
                                                 <div className="flex items-center gap-2 mb-2">
                                                     <span className="font-mono text-[10px] text-slate-500 dark:text-slate-400">{post.date}</span>
-                                                    <span className="text-[10px] bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded-full text-indigo-600 dark:text-indigo-300 border border-slate-200 dark:border-white/10 group-hover:border-purple-500/30 group-hover:text-purple-500 dark:group-hover:text-purple-300 transition-colors">{post.category}</span>
+                                                    <span className="text-[10px] bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded-full text-blue-600 dark:text-blue-300 border border-slate-200 dark:border-white/10 group-hover:border-blue-500/30 group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors">{post.category}</span>
                                                 </div>
 
                                                 {/* Title */}
@@ -97,7 +97,7 @@ export const Writing: React.FC = () => {
                                             ${isRightColumn ? 'md:group-hover:order-1 border-l-0 border-r' : 'md:group-hover:order-2'}
                                         `}>
                                             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">{post.excerpt}</p>
-                                            <div className="flex items-center gap-1.5 text-purple-500 dark:text-purple-400 text-xs font-medium">
+                                            <div className="flex items-center gap-1.5 text-teal-500 dark:text-teal-400 text-xs font-medium">
                                                 <span>Read article</span>
                                                 <ExternalLink size={12} className="transition-transform" />
                                             </div>

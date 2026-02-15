@@ -76,7 +76,7 @@ export const OrbitalSkills: React.FC = () => {
       aria-label="Interactive Orbital Skills Visualization"
     >
       {/* Central Nucleus */}
-      <div className="absolute z-20 w-16 h-16 rounded-full bg-slate-50 dark:bg-black/80 backdrop-blur-md border border-slate-200 dark:border-cyan-500/30 flex items-center justify-center shadow-lg dark:shadow-[0_0_30px_rgba(6,182,212,0.15)] transition-colors duration-500">
+      <div className="absolute z-20 w-16 h-16 rounded-full bg-slate-50 dark:bg-black/80 backdrop-blur-md border border-slate-200 dark:border-blue-500/30 flex items-center justify-center shadow-lg dark:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-colors duration-500">
         <img src="/assets/icon-dev.svg" alt="Core Skills" className="w-8 h-8 opacity-80 invert dark:invert-0 transition-all duration-500" />
       </div>
 
@@ -222,9 +222,9 @@ const OrbitalIcon: React.FC<OrbitalIconProps> = ({ item, x, y, sizePx, darkChipS
                     border-2 border-slate-300/80
                     shadow-lg
                     backdrop-blur-sm
-                    group-hover:border-cyan-500/70 dark:group-hover:border-cyan-400/50 
+                    group-hover:border-blue-500/70 dark:group-hover:border-blue-400/50 
                     group-hover:scale-110 
-                    group-hover:shadow-xl dark:group-hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]
+                    group-hover:shadow-xl dark:group-hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]
                     before:absolute before:inset-0 before:rounded-full 
                     before:bg-gradient-to-br before:from-slate-200/20 before:to-transparent 
                     before:opacity-100 dark:before:opacity-60 before:transition-opacity`}

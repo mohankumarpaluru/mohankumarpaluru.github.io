@@ -17,10 +17,24 @@ module.exports = {
                 mono: ['JetBrains Mono', 'monospace'],
             },
             colors: {
-                'accent': '#38bdf8', // Sky 400
-                'accent-secondary': '#818cf8', // Indigo 400
-                'bg-dark': '#050505', // Deep black/blue
-                'bg-light': '#f0f4f8', // Cool Grey
+                'accent': '#3b82f6', // Blue 500 (primary)
+                'accent-secondary': '#06b6d4', // Cyan 500 (smooth bridge)
+                'bg-dark': '#0a1628', // Deep navy
+                'bg-light': '#f8fafc', // Slate 50
+                // Semantic tokens via CSS custom properties
+                'primary': 'var(--color-primary)',
+                'primary-strong': 'var(--color-primary-strong)',
+                'theme-accent': 'var(--color-accent)',
+                'accent-strong': 'var(--color-accent-strong)',
+                'theme-text': 'var(--color-text)',
+                'text-muted': 'var(--color-text-muted)',
+                'theme-border': 'var(--color-border)',
+                'border-strong': 'var(--color-border-strong)',
+                'focus-ring': 'var(--color-focus-ring)',
+                'gradient-from': 'var(--color-gradient-from)',
+                'gradient-via': 'var(--color-gradient-via)',
+                'gradient-to': 'var(--color-gradient-to)',
+                'glow': 'var(--color-glow)',
             },
             animation: {
                 'spin-slow': 'spin 8s linear infinite',
